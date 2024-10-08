@@ -18,15 +18,16 @@ with open(filename) as f:
 
     # Plot the data.
 fig = plt.figure(dpi=128, figsize=(10, 6))
-plt.plot(dates, highs, c='red')
-plt.plot(dates, lows, c='blue')
+plt.plot(dates, highs, c='red', label='High Temperatures')
+plt.plot(dates, lows, c='blue', label='Low Temperatures')
 
 # Format the plot.
-plt.title("Daily High and Low Temperatures, July 2018", fontsize=24)
+plt.title("Daily High and Low Temperatures, July 2018", fontsize=16)
 plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()  # Rotate date labels for better readability.
 plt.ylabel("Temperature (F)", fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
+plt.legend()  # Add a legend to the plot
 
 # Show the plot.
 plt.show()
